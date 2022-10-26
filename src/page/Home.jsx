@@ -11,7 +11,7 @@ const Home = () => {
   const url = "https://6358cfefc26aac906f48b852.mockapi.io/api1/tasks";
 
   const toggle = () => {
-    setIsOpen(!isOpen);
+     setIsOpen(!isOpen);
     const buttonText = isOpen ? "Show Add Task Bar" : "Close Add Task Bar";
     setText(buttonText);
   };
@@ -29,9 +29,9 @@ const Home = () => {
   return (
     <div>
       <Button 
-        onClick={() => {
-          toggle();
-        }} variant="danger"
+        onClick={() => {toggle()}
+          
+        } variant="danger"
       >
         {text}
       </Button>
