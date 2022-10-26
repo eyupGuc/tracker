@@ -4,7 +4,7 @@ import Home from "./page/Home";
 
 function App() {
   return (
-    <div className="container">
+    <div className="container text-center">
       <Header />
       <Home />
     </div>
