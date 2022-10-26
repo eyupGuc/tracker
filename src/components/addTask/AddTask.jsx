@@ -46,9 +46,11 @@ await axios.post(url,newTask)
             }}
           />
         </Form.Group>
-        <Button variant="success" type="submit">
-          SAVE{" "}
+        <div className="text-center">
+        <Button variant="success w-50" type="submit" >
+          SAVE
         </Button>
+        </div>
       </Form>
     </div>
   );
