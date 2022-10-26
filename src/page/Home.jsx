@@ -1,6 +1,8 @@
 import axios from "axios";
 import  Button  from "react-bootstrap/Button";
 import { useEffect, useState } from "react";
+import AddTask from "../components/addTask/AddTask";
+import TaskList from "../components/taskList/TaskList";
 
 const Home = () => {
   const [task, setTask] = useState([]);
@@ -29,10 +31,12 @@ const Home = () => {
       <Button 
         onClick={() => {
           toggle();
-        }}
+        }} variant="danger"
       >
         {text}
       </Button>
+      {isOpen && <AddTask/>}
+      <TaskList />
     </div>
   );
 };
