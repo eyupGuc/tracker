@@ -1,6 +1,6 @@
 import axios from "axios";
 import Button from "react-bootstrap/Button";
-import { useEffect, useState } from "react";
+import React , { useEffect, useState } from "react";
 import AddTask from "../components/addTask/AddTask";
 import TaskList from "../components/taskList/TaskList";
 
@@ -8,7 +8,6 @@ const Home = () => {
   const [task, setTask] = useState([]);
   const [text, setText] = useState("Show Task Bar");
   const [isOpen, setIsOpen] = useState(false);
-
   const url = "https://6358cfefc26aac906f48b852.mockapi.io/api1/tasks";
 
   const toggle = () => {
@@ -18,7 +17,7 @@ const Home = () => {
 
     // console.log("Button clicked")
   };
-
+//Crud / Read
   const getTask = async () => {
     const { data } = await axios(url);
     setTask(data);
@@ -32,11 +31,11 @@ const Home = () => {
 
   return (
     <div className="mt-4 d-flex justify-content-center flex-column ">
-      <Button onClick={toggle} variant="warning">
+      <Button onClick={()=>{toggle()}} variant="warning">
         {text}
       </Button>
       {isOpen && <AddTask getTask={getTask} />}
-      <TaskList task={task} />
+      <TaskList task={task} getTask={getTask} />
     </div>
   );
 };

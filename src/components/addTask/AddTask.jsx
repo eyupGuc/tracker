@@ -12,6 +12,8 @@ const AddTask = ({ getTask }) => {
     console.log(task);
     console.log(date);
     addNewTask(newTask);
+    setTask("");
+    setDate("");
   };
 
   //Created
