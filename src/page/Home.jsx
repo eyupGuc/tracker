@@ -12,31 +12,30 @@ const Home = () => {
   const url = "https://6358cfefc26aac906f48b852.mockapi.io/api1/tasks";
 
   const toggle = () => {
-    setIsOpen(!isOpen)
-    const buttonText = isOpen ?"Show Task Bar" : "Hide Task Bar";
+    setIsOpen(!isOpen);
+    const buttonText = isOpen ? "Show Task Bar" : "Hide Task Bar";
     setText(buttonText);
 
     // console.log("Button clicked")
   };
 
   const getTask = async () => {
-    const  {data } = await axios(url);
+    const { data } = await axios(url);
     setTask(data);
   };
 
   useEffect(() => {
     getTask();
-    
   }, []);
 
-//   console.log(task);
+  //   console.log(task);
 
   return (
-    <div>
+    <div className="mt-4 d-flex justify-content-center flex-column ">
       <Button onClick={toggle} variant="warning">
         {text}
       </Button>
-      {isOpen && <  AddTask />}
+      {isOpen && <AddTask />}
       <TaskList task={task} />
     </div>
   );
