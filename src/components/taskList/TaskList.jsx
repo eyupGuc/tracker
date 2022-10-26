@@ -7,6 +7,8 @@ const TaskList = ({ task,getTask }) => {
   // console.log(task);
   const deleteTask = async (id) => {
     await axios.delete(`${url}/${id}`);
+
+    console.log(id);
   };
 
   getTask();
@@ -27,7 +29,7 @@ const TaskList = ({ task,getTask }) => {
             </div>
             <div>
               <AiFillDelete
-                onClick={(id) => deleteTask(id)}
+                onClick={() => deleteTask(id)}
                 style={{
                   cursor: "pointer",
                   fontSize: "1.8rem",

@@ -9,11 +9,12 @@ const AddTask = ({ getTask }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const newTask = { task, date };
-    console.log(task);
-    console.log(date);
+    // console.log(task);
+    // console.log(date);
     addNewTask(newTask);
-    setTask("");
-    setDate("");
+   
+    setTask(" ");
+    setDate(" ");
   };
 
   //Created
@@ -22,10 +23,12 @@ const AddTask = ({ getTask }) => {
     try {
       await axios.post(url, newTask);
     } catch (e) {}
+
+    getTask();
     
   };
 
-  getTask();
+  
 
   return (
     <div>
