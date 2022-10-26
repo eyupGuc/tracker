@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Button } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 
-const AddTask = () => {
+const AddTask = ({getTask}) => {
   const [task, setTask] = useState("");
   const [date, setDate] = useState("");
   const handleSubmit = (e) => {
@@ -12,7 +12,14 @@ const AddTask = () => {
     console.log(task);
     console.log(date);
     addNewTask(newTask)
+    
+    
   };
+
+
+ 
+  
+
 //Created
   const addNewTask=async(newTask)=>{
     const url = "https://6358cfefc26aac906f48b852.mockapi.io/api1/tasks"
@@ -22,7 +29,7 @@ await axios.post(url,newTask)
     } catch(e){
 
     }
-
+    getTask();   
   }
 
   return (
