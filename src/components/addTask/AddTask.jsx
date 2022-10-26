@@ -12,9 +12,9 @@ const AddTask = () => {
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Date</Form.Label>
-          <Form.Control type="date" placeholder="Please select a date" />
+          <Form.Control type="date" />
         </Form.Group>
-        <Button variant="success">SAVE </Button>
+        <Button variant="success" type="submit">SAVE </Button>
       </Form>
     </div>
   );
