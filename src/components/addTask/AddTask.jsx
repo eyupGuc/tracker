@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Button } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 
-const AddTask = ({getTask}) => {
+const AddTask = ({ getTask }) => {
   const [task, setTask] = useState("");
   const [date, setDate] = useState("");
   const handleSubmit = (e) => {
@@ -11,26 +11,19 @@ const AddTask = ({getTask}) => {
     const newTask = { task, date };
     console.log(task);
     console.log(date);
-    addNewTask(newTask)
-    
+    addNewTask(newTask);
+  };
+
+  //Created
+  const addNewTask = async (newTask) => {
+    const url = "https://6358cfefc26aac906f48b852.mockapi.io/api1/tasks";
+    try {
+      await axios.post(url, newTask);
+    } catch (e) {}
     
   };
 
-
- 
-  
-
-//Created
-  const addNewTask=async(newTask)=>{
-    const url = "https://6358cfefc26aac906f48b852.mockapi.io/api1/tasks"
-    try{
-await axios.post(url,newTask)
-
-    } catch(e){
-
-    }
-    getTask();   
-  }
+  getTask();
 
   return (
     <div>
@@ -54,9 +47,9 @@ await axios.post(url,newTask)
           />
         </Form.Group>
         <div className="text-center">
-        <Button variant="success w-50" type="submit" >
-          SAVE
-        </Button>
+          <Button variant="success w-50" type="submit">
+            SAVE
+          </Button>
         </div>
       </Form>
     </div>
