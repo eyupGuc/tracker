@@ -1,15 +1,19 @@
-const TaskList=({task})=>{
-// console.log(task);
-    return(
-       
-        <div>
- {task.map((item)=>{
-    const {Date,Task,id,task}=item;
-    console.log(task)
- })}
+const TaskList = ({ task }) => {
+  // console.log(task);
+  return (
+    <div>
+      {task.map((item) => {
+        const { id, task,date } = item;
 
-        </div>
-    )
-}
+        return (
+          <div key={id}>
+            <h4>{task}</h4>
+            <p>{date}</p>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
 
 export default TaskList;
