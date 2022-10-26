@@ -17,9 +17,9 @@ const TaskList = ({ task }) => {
               <p>{date}</p>
               
             </div>
-            <div>
+            <div >
                
-                <AiFillDelete />
+                <AiFillDelete style={{cursor:"pointer" ,fontSize:"1.8rem",marginRight:"10px",boxShadow:"2px 2px 2px black"}} />
               </div>
           </div>
         );
